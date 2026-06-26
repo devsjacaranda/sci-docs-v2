@@ -11,8 +11,9 @@ Toda feature nova segue o fluxo [GitHub Spec Kit](https://github.com/github/spec
 3. `/speckit-plan` — stack e arquitetura
 4. `/speckit-tasks` — tarefas acionáveis
 5. `/speckit-implement` — execução com TDD
+6. `/speckit-complete` — arquivar: STATUS.md + mover para `specs/arquivados/`
 
-Specs vivem em `civ2-docs/specs/<feature>/`. Infra do processo em `civ2-docs/.specify/`. Índice de skills: [spec-kit/SKILLS.md](../spec-kit/SKILLS.md).
+**Ativas:** `civ2-docs/specs/<feature>/` · **Arquivadas:** `civ2-docs/specs/arquivados/<feature>/` · Índice: [specs/README.md](../specs/README.md). Infra: `civ2-docs/.specify/`. Skills: [spec-kit/SKILLS.md](../spec-kit/SKILLS.md).
 
 ### II. Test-First (NON-NEGOTIABLE)
 
@@ -50,12 +51,13 @@ Monorepo Turborepo em **ci-client-v2** (`apps/web` + `packages/*`) — **adotado
 ## Hierarquia de documentação
 
 1. `civ2-docs/.specify/memory/constitution.md` — processo e princípios
-2. `civ2-docs/specs/<feature>/` — specs geradas pelo Spec Kit
-3. `.cursor/docs/licencas-canonicas.md` — produto (licenças)
-4. `.cursor/docs/regras-plataforma.md` — copy e UI
-5. `ci-api-v2/CONTEXT.md` — vocabulário backend
-6. [spec-kit/SKILLS.md](../spec-kit/SKILLS.md) — **quando usar cada skill** (índice canônico)
-7. Skills em `.cursor/skills/` — execução por domínio (ler `SKILL.md` antes de implementar)
+2. `civ2-docs/specs/<feature>/` — specs **ativas** (Spec Kit)
+3. `civ2-docs/specs/arquivados/<feature>/` — specs **concluídas** (`/speckit-complete`)
+4. `.cursor/docs/licencas-canonicas.md` — produto (licenças)
+5. `.cursor/docs/regras-plataforma.md` — copy e UI
+6. `ci-api-v2/CONTEXT.md` — vocabulário backend
+7. [spec-kit/SKILLS.md](../spec-kit/SKILLS.md) — **quando usar cada skill** (índice canônico)
+8. Skills em `.cursor/skills/` — execução por domínio (ler `SKILL.md` antes de implementar)
 
 ## Repositórios do monorepo
 
@@ -63,7 +65,8 @@ Monorepo Turborepo em **ci-client-v2** (`apps/web` + `packages/*`) — **adotado
 ci-v2/
 ├── civ2-docs/     # Spec Kit + specs + índice de skills
 │   ├── .specify/  # templates, scripts, constitution
-│   ├── specs/     # features (/speckit-specify)
+│   ├── specs/     # features ativas (/speckit-specify)
+│   │   └── arquivados/  # concluídas (/speckit-complete)
 │   └── spec-kit/  # SKILLS.md
 ├── ci-api-v2/     # REST API Nest + Prisma + PostgreSQL
 └── ci-client-v2/  # frontend monorepo Turborepo
@@ -75,4 +78,4 @@ ci-v2/
 - Conflito stack vs spec: constitution vence
 - Amendments: atualizar este arquivo + rodar sync de templates se necessário
 
-**Version**: 1.1.0 | **Ratified**: 2026-06-05 | **Last Amended**: 2026-06-06
+**Version**: 1.2.0 | **Ratified**: 2026-06-05 | **Last Amended**: 2026-06-25

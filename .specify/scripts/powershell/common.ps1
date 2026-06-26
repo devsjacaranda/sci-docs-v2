@@ -18,6 +18,16 @@ function Get-SpecsDir {
     return Join-Path (Get-Civ2DocsRoot -RepoRoot $RepoRoot) 'specs'
 }
 
+function Get-ArchivedSpecsDir {
+    param([string]$RepoRoot = (Get-RepoRoot))
+    return Join-Path (Get-SpecsDir -RepoRoot $RepoRoot) 'arquivados'
+}
+
+function Test-IsArchivedSpecsContainer {
+    param([string]$Name)
+    return [string]::Equals($Name, 'arquivados', [System.StringComparison]::OrdinalIgnoreCase)
+}
+
 # Find repository root by searching upward for .specify directory
 # This is the primary marker for spec-kit projects
 function Find-SpecifyRoot {
@@ -95,7 +105,7 @@ function Get-CurrentBranch {
         $highest = 0
         $latestTimestamp = ""
 
-        Get-ChildItem -Path $specsDir -Directory | ForEach-Object {
+        Get-ChildItem -Path $specsDir -Directory | Where-Object { -not (Test-IsArchivedSpecsContainer $_.Name) } | ForEach-Object {
             if ($_.Name -match '^(\d{8}-\d{6})-') {
                 # Timestamp-based branch: compare lexicographically
                 $ts = $matches[1]

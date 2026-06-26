@@ -75,47 +75,13 @@ if (Get-Command ConvertFrom-Yaml -ErrorAction SilentlyContinue) {
 
 if ($null -eq $Options) {
     # ConvertFrom-Yaml unavailable or failed; fall back to Python+PyYAML.
-    $pythonCmd = $null
-    foreach ($candidate in @('python3', 'python')) {
-        if (Get-Command $candidate -ErrorAction SilentlyContinue) {
-            # Verify it is Python 3
-            $verOut = & $candidate --version 2>&1
-            if ($verOut -match 'Python 3') {
-                $pythonCmd = $candidate
-                break
-            }
-        }
-    }
+    $pythonCmd = @(Get-Python3Command)
 
-    if ($pythonCmd) {
+    if ($pythonCmd.Count -gt 0) {
         try {
-            $jsonOut = & $pythonCmd -c @'
-import json
-import sys
-try:
-    import yaml
-except ImportError:
-    print(
-        "agent-context: PyYAML is required to parse extension config; cannot update context.",
-        file=sys.stderr,
-    )
-    sys.exit(2)
-
-try:
-    with open(sys.argv[1], "r", encoding="utf-8") as fh:
-        data = yaml.safe_load(fh)
-except Exception as exc:
-    print(
-        f"agent-context: unable to parse {sys.argv[1]} ({exc}); cannot update context.",
-        file=sys.stderr,
-    )
-    sys.exit(2)
-
-if not isinstance(data, dict):
-    data = {}
-
-print(json.dumps(data))
-'@ $ExtConfig
+            $oneLiner = "import json,sys; import yaml; d=yaml.safe_load(open(sys.argv[1],encoding='utf-8')); print(json.dumps(d if isinstance(d,dict) else {}))"
+            $pyArgs = @($pythonCmd | Select-Object -Skip 1) + @('-c', $oneLiner, $ExtConfig)
+            $jsonOut = & $pythonCmd[0] @pyArgs
             if ($LASTEXITCODE -eq 0 -and $jsonOut) {
                 $Options = $jsonOut | ConvertFrom-Json -ErrorAction Stop
             }

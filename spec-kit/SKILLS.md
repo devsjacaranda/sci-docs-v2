@@ -17,11 +17,14 @@ Localização: `.cursor/skills/<nome>/SKILL.md` (espelhadas em `.agents/skills/`
 | `/speckit-tasks` | Após plan — quebrar em tarefas acionáveis |
 | `/speckit-analyze` | *(opcional)* Consistência entre artefatos — **antes** de implementar |
 | `/speckit-implement` | Executar tasks com TDD |
+| `/speckit-complete` | **Arquivar** — STATUS.md, `feature.json`, move para `specs/arquivados/` |
 | `/speckit-checklist` | *(opcional)* Validar completude da spec/plan |
 | `/speckit-constitution` | Criar ou alterar princípios do projeto |
 | `/speckit-taskstoissues` | Exportar tasks para GitHub Issues |
 
-**Ordem mínima:** specify → plan → tasks → implement.
+**Ordem mínima:** specify → plan → tasks → implement → **complete** (move para `specs/arquivados/`).
+
+**Layout specs:** ativas em `civ2-docs/specs/<NNN-feature>/` · arquivadas em `civ2-docs/specs/arquivados/` · índice [specs/README.md](../specs/README.md).
 
 ---
 
@@ -94,6 +97,7 @@ Ordem sugerida:
 2. Implementar API: skills da seção 3 + TDD
 3. Implementar client: skills da seção 4 + TDD
 4. `/speckit-implement` cobre o fluxo se usar o comando único
+5. `/speckit-complete` arquiva a feature (STATUS, feature.json, contexto agente)
 
 No `/speckit-plan`, declarar explicitamente `ci-api-v2` e `ci-client-v2`.
 

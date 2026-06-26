@@ -19,3 +19,11 @@ hooks:
     prompt: Execute speckit.agent-context.update?
     description: Refresh agent context after planning
     condition: null
+  after_implement:
+  - extension: agent-context
+    command: speckit.complete
+    enabled: true
+    optional: true
+    prompt: Arquivar feature concluída com /speckit-complete?
+    description: Archive completed feature (STATUS, feature.json, agent context)
+    condition: null
