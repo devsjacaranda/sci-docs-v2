@@ -1,9 +1,3 @@
 {
-  "feature_directory": "civ2-docs/specs/022-it-seguranca-informacao",
-  "last_completed": {
-    "feature_directory": "civ2-docs/specs/arquivados/020-purchasing-insights",
-    "completed_at": "2026-06-25",
-    "tasks_done": 68,
-    "tasks_total": 68
-  }
+  "feature_directory": "civ2-docs/specs/023-global-docs"
 }
