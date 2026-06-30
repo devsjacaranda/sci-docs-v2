@@ -87,6 +87,14 @@ Localização: `.cursor/skills/<nome>/SKILL.md` (espelhadas em `.agents/skills/`
 | Erro de build Vite | `vite-react-best-practices` |
 | Deploy produção | `vite-react-best-practices` |
 
+### Saúde / e-SUS / UBS
+
+| Skill | Quando usar |
+|-------|-------------|
+| `esus-aps` | PEC, LEDI 7.4.x, FAI, fichas CDS, DW relatórios, CNS/CNES/SIGTAP, export e-SUS, integração MS, módulo `saude/` |
+
+**Combinar com** `ui-ux-pro-max` em telas Saúde · spec arquivada 024 em `specs/arquivados/024-saude-atendimento-ubs/`
+
 ---
 
 ## 5. Feature full-stack (API + client)

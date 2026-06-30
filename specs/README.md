@@ -25,11 +25,14 @@ Diretório canônico de features Spec Kit.
 |---|------|
 | 019 | [purchasing-fiscalizacao](./019-purchasing-fiscalizacao/spec.md) |
 | 021 | [purchasing-maturidade](./021-purchasing-maturidade/spec.md) |
+| 022 | [it-seguranca-informacao](./022-it-seguranca-informacao/spec.md) |
+| 023 | [global-docs](./023-global-docs/spec.md) |
+| 025 | [tenant-branding-config](./025-tenant-branding-config/spec.md) |
 
 ## Arquivadas
 
-Índice completo: [arquivados/README.md](./arquivados/README.md) (001–020).
+Índice completo: [arquivados/README.md](./arquivados/README.md) (001–024).
 
-**Última concluída:** [020 Purchasing Insights](./arquivados/020-purchasing-insights/STATUS.md)
+**Última concluída:** [024 Saúde Atendimento UBS](./arquivados/024-saude-atendimento-ubs/STATUS.md)
 
 Infra Spec Kit: `civ2-docs/.specify/` · Skills: [spec-kit/SKILLS.md](../spec-kit/SKILLS.md)

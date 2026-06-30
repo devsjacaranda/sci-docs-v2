@@ -26,5 +26,6 @@ Features **concluídas** e movidas para `civ2-docs/specs/arquivados/` via `/spec
 | 017 | [gabinete-usuarios-setores-crud](./017-gabinete-usuarios-setores-crud/STATUS.md) | 90/90 tasks |
 | 018 | [purchasing-crud](./018-purchasing-crud/STATUS.md) | 106/106 tasks |
 | 020 | [purchasing-insights](./020-purchasing-insights/STATUS.md) | 68/68 tasks |
+| 024 | [saude-atendimento-ubs](./024-saude-atendimento-ubs/STATUS.md) | 88/88 tasks |
 
-**Última arquivada:** [020 Purchasing Insights](./020-purchasing-insights/STATUS.md)
+**Última arquivada:** [024 Saúde Atendimento UBS](./024-saude-atendimento-ubs/STATUS.md)
