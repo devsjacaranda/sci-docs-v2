@@ -27,5 +27,11 @@ Features **concluídas** e movidas para `civ2-docs/specs/arquivados/` via `/spec
 | 018 | [purchasing-crud](./018-purchasing-crud/STATUS.md) | 106/106 tasks |
 | 020 | [purchasing-insights](./020-purchasing-insights/STATUS.md) | 68/68 tasks |
 | 024 | [saude-atendimento-ubs](./024-saude-atendimento-ubs/STATUS.md) | 88/88 tasks |
+| 027 | [fix-ouvidoria-tramitar](./027-fix-ouvidoria-tramitar/STATUS.md) | 20/20 tasks |
+| 028 | [juridico-tramitacao-linked](./028-juridico-tramitacao-linked/STATUS.md) | 42/42 tasks |
+| 031 | [tramitacao-caixa-pessoal](./031-tramitacao-caixa-pessoal/STATUS.md) | 67/67 tasks |
+| 031 | [global-dashboard-demock](./031-global-dashboard-demock/STATUS.md) | 39/39 tasks |
+| 032 | [permission-screen-visibility](./032-permission-screen-visibility/STATUS.md) | 86/86 tasks |
+| 033 | [tramitacao-docs-confidenciais](./033-tramitacao-docs-confidenciais/STATUS.md) | 67/67 tasks |
 
-**Última arquivada:** [024 Saúde Atendimento UBS](./024-saude-atendimento-ubs/STATUS.md)
+**Última arquivada:** [033 Documentos confidenciais na Tramitação](./033-tramitacao-docs-confidenciais/STATUS.md)

@@ -28,11 +28,19 @@ Diretório canônico de features Spec Kit.
 | 022 | [it-seguranca-informacao](./022-it-seguranca-informacao/spec.md) |
 | 023 | [global-docs](./023-global-docs/spec.md) |
 | 025 | [tenant-branding-config](./025-tenant-branding-config/spec.md) |
+| 026 | [esus-mockdown-export](./026-esus-mockdown-export/spec.md) |
+| 029 | [notification-system](./029-notification-system/spec.md) |
+| 030 | [gabinete-tramitacao-linked](./030-gabinete-tramitacao-linked/spec.md) |
+| 034 | [desentranhamento-tramitacao](./034-desentranhamento-tramitacao/spec.md) |
+| 036 | ~~[migracao-agema-v1](./036-migracao-agema-v1/spec.md)~~ — **substituída pela 038** |
+| 037 | [siged-ux-refactor](./037-siged-ux-refactor/spec.md) |
+| 038 | [migracao-modulos-v1](./038-migracao-modulos-v1/spec.md) |
+| 039 | [modulo-diretor](./039-modulo-diretor/spec.md) — **ativa** |
 
 ## Arquivadas
 
-Índice completo: [arquivados/README.md](./arquivados/README.md) (001–024).
+Índice completo: [arquivados/README.md](./arquivados/README.md) (001–035).
 
-**Última concluída:** [024 Saúde Atendimento UBS](./arquivados/024-saude-atendimento-ubs/STATUS.md)
+**Última concluída:** [035 Tramitação Protocolo](./arquivados/035-tramitacao-protocolo/STATUS.md)
 
 Infra Spec Kit: `civ2-docs/.specify/` · Skills: [spec-kit/SKILLS.md](../spec-kit/SKILLS.md)

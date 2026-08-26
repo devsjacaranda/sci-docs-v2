@@ -48,6 +48,8 @@ Localização: `.cursor/skills/<nome>/SKILL.md` (espelhadas em `.agents/skills/`
 | `prisma-schema-workflow` | Schema, migrations, seed, extensions tenant/soft-delete |
 | `auth-patterns` | JWT, guards, roles, tenant, `X-Tenant-ID`, `AdminPlataforma` |
 | `licenca-contracts` | `@RequireLicenca`, LicencaGuard, slugs Carvalho/Pau-Brasil/Jatobá/Cedro |
+| `js-ts-data-transforms` | Shaping Prisma→DTO, agregações em service — **complementa** scaffold |
+| `js-ts-performance-readability` | Seeds, scripts, utils puros — **complementa** nestjs/prisma |
 
 **Docs de produto (não são skills):** `.cursor/docs/licencas-canonicas.md`, `regras-plataforma.md`  
 **Vocabulário API:** `ci-api-v2/CONTEXT.md`
@@ -62,6 +64,8 @@ Localização: `.cursor/skills/<nome>/SKILL.md` (espelhadas em `.agents/skills/`
 | Licença na rota | `licenca-contracts` |
 | Pastas/arquitetura | `ci-api-arquitetura` |
 | Review NestJS geral | `nestjs-best-practices` |
+| Mapper / agregação service | `js-ts-data-transforms` |
+| Seed / script | `js-ts-performance-readability` |
 
 ---
 
@@ -71,6 +75,8 @@ Localização: `.cursor/skills/<nome>/SKILL.md` (espelhadas em `.agents/skills/`
 |-------|-------------|
 | `ui-ux-pro-max` | UI, layout, cores, tipografia, shadcn, Nivo, design system, mockup |
 | `vite-react-best-practices` | Vite, build, rotas lazy, performance, deploy SPA, `VITE_*` |
+| `js-ts-data-transforms` | `*-mappers.ts`, ViewModels, API→UI, fixtures Vitest — **complementa** vite |
+| `js-ts-performance-readability` | Utils puros, parsers, agregações — **complementa** vite |
 
 **Usar as duas** em feature completa (página + rotas + gráficos + layout).
 
@@ -86,6 +92,8 @@ Localização: `.cursor/skills/<nome>/SKILL.md` (espelhadas em `.agents/skills/`
 | Novo dashboard visual | `ui-ux-pro-max` (+ vite se rotas/estado) |
 | Erro de build Vite | `vite-react-best-practices` |
 | Deploy produção | `vite-react-best-practices` |
+| Mapper / transform de dados | `js-ts-data-transforms` |
+| Util / parser puro | `js-ts-performance-readability` |
 
 ### Saúde / e-SUS / UBS
 
@@ -94,6 +102,17 @@ Localização: `.cursor/skills/<nome>/SKILL.md` (espelhadas em `.agents/skills/`
 | `esus-aps` | PEC, LEDI 7.4.x, FAI, fichas CDS, DW relatórios, CNS/CNES/SIGTAP, export e-SUS, integração MS, módulo `saude/` |
 
 **Combinar com** `ui-ux-pro-max` em telas Saúde · spec arquivada 024 em `specs/arquivados/024-saude-atendimento-ubs/`
+
+---
+
+## 5.1 JS/TS transversal (complementar)
+
+Adaptado de [icyJoseph/agent-skills](https://github.com/icyJoseph/agent-skills) para o monorepo CI v2. **Não substituem** skills de stack — preenchem lacunas em transforms e código puro.
+
+| Skill | Quando usar |
+|-------|-------------|
+| `js-ts-data-transforms` | Mappers, ViewModels, agregações, pipeline fetch→validate→map, shaping Prisma→DTO |
+| `js-ts-performance-readability` | Seeds, scripts, Map/Set, async paralelo, edge cases em utils |
 
 ---
 
