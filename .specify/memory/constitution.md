@@ -54,7 +54,7 @@ Monorepo Turborepo em **ci-client-v2** (`apps/web` + `packages/*`) — **adotado
 2. `civ2-docs/specs/<feature>/` — specs **ativas** (Spec Kit)
 3. `civ2-docs/specs/arquivados/<feature>/` — specs **concluídas** (`/speckit-complete`)
 4. `.cursor/docs/licencas-canonicas.md` — produto (licenças)
-5. `.cursor/docs/regras-plataforma.md` — copy e UI
+5. `.cursor/docs/regras-plataforma.md` — copy e UI (detalhe operacional: §4.3 + [040-dossie-detalhe-ui](../../specs/040-dossie-detalhe-ui/spec.md))
 6. `ci-api-v2/CONTEXT.md` — vocabulário backend
 7. [spec-kit/SKILLS.md](../spec-kit/SKILLS.md) — **quando usar cada skill** (índice canônico)
 8. Skills em `.cursor/skills/` — execução por domínio (ler `SKILL.md` antes de implementar)

@@ -36,6 +36,7 @@ Diretório canônico de features Spec Kit.
 | 037 | [siged-ux-refactor](./037-siged-ux-refactor/spec.md) |
 | 038 | [migracao-modulos-v1](./038-migracao-modulos-v1/spec.md) |
 | 039 | [modulo-diretor](./039-modulo-diretor/spec.md) — **ativa** |
+| 040 | [dossie-detalhe-ui](./040-dossie-detalhe-ui/spec.md) — **norma de UI** (dossiê de detalhe; piloto Ouvidoria) |
 
 ## Arquivadas
 

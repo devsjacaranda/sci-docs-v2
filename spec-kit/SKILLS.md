@@ -81,7 +81,8 @@ Localização: `.cursor/skills/<nome>/SKILL.md` (espelhadas em `.agents/skills/`
 **Usar as duas** em feature completa (página + rotas + gráficos + layout).
 
 **Paleta:** rule `mint-palette.mdc`  
-**Copy/UI de produto:** `.cursor/docs/regras-plataforma.md`
+**Copy/UI de produto:** `.cursor/docs/regras-plataforma.md`  
+**Tela de detalhe (dossiê canônico):** [specs/040-dossie-detalhe-ui](../specs/040-dossie-detalhe-ui/spec.md) · §4.3 de `regras-plataforma.md`
 
 ### Prioridade frontend (conflito)
 
