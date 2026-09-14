@@ -1,3 +1,14 @@
+<!--
+Sync Impact Report
+- Version change: 1.2.0 → 1.3.0 (MINOR — expansão de guidance, sem remoção/redefinição de princípio)
+- Modified principles: II (Test-First) — adicionado `playwright-e2e`; III (Stack fixa) — adicionado bloco "Skills de stack (catálogo externo)"; V (Clean code e modularidade) — adicionado bullet "Skills de apoio"
+- Added sections: nenhuma seção nova (apenas bullets dentro de III e V)
+- Removed sections: nenhuma
+- Rationale: catálogo de skills externas instalado via `npx skills add` (shadcn, nestjs-best-practices, fastify-best-practices, prisma-postgres, neon-postgres, react-vite-best-practices, xlsx, pdf, playwright-e2e, clean-code, clean-architecture) + fusão de typescript-advanced-types + mastering-typescript em `typescript-mastery` — rastreadas em `skills-lock.json` (raiz) e documentadas em `spec-kit/SKILLS.md` §3/§4/§5.1/§5.2
+- Templates requiring updates: ✅ plan-template.md (sem referências a skills específicas — nenhuma mudança necessária) · ✅ spec-template.md (idem) · ✅ tasks-template.md (idem)
+- Follow-up TODOs: nenhum
+-->
+
 # CI v2 Constitution
 
 ## Core Principles
@@ -17,7 +28,7 @@ Toda feature nova segue o fluxo [GitHub Spec Kit](https://github.com/github/spec
 
 ### II. Test-First (NON-NEGOTIABLE)
 
-TDD obrigatório: RED → GREEN → REFACTOR. Nenhum código de produção sem teste correspondente. Skills: `tdd`, `test-driven-development`, `testing-conventions`.
+TDD obrigatório: RED → GREEN → REFACTOR. Nenhum código de produção sem teste correspondente. Skills: `tdd`, `test-driven-development`, `testing-conventions`, `playwright-e2e` (E2E).
 
 ### III. Stack fixa (sem desvio)
 
@@ -29,6 +40,8 @@ TDD obrigatório: RED → GREEN → REFACTOR. Nenhum código de produção sem t
 **NUNCA** class-validator na API — só Zod em `*.schemas.ts`.
 
 Monorepo Turborepo em **ci-client-v2** (`apps/web` + `packages/*`) — **adotado**; ci-api-v2 permanece pacote independente na raiz do repo.
+
+**Skills de stack (catálogo externo, `npx skills add`):** `nestjs-best-practices`, `fastify-best-practices`, `prisma-postgres`, `neon-postgres` *(opcional)* para ci-api-v2; `shadcn`, `react-vite-best-practices` para ci-client-v2; `typescript-mastery` para ambos. Rastreadas em `skills-lock.json` (raiz) — índice completo e prioridade de conflito em [spec-kit/SKILLS.md](../spec-kit/SKILLS.md).
 
 ### IV. Multi-tenant e licenças
 
@@ -47,6 +60,7 @@ Monorepo Turborepo em **ci-client-v2** (`apps/web` + `packages/*`) — **adotado
 - Camadas frontend: `pages/`, `components/`, `api/` (mínimo); `hooks/`, `lib/`, `context/` quando aplicável
 - Infra SPA: `modules/shell/`; reuso cross-domain: `modules/shared/`; UI genérica: `@ci/ui`; tipos licença: `@ci/domain`
 - Referência viva: `modules/ouvidoria/` + `modules/permissao/`; composition root: `modules/shell/pages/ScreenPage.tsx`
+- Skills de apoio (uso pontual): `clean-code` (nomes, funções, comentários), `clean-architecture` (Dependency Rule, camadas, ports & adapters) — `ci-api-arquitetura` é a referência canônica do monorepo em caso de conflito
 
 ## Hierarquia de documentação
 
@@ -78,4 +92,4 @@ ci-v2/
 - Conflito stack vs spec: constitution vence
 - Amendments: atualizar este arquivo + rodar sync de templates se necessário
 
-**Version**: 1.2.0 | **Ratified**: 2026-06-05 | **Last Amended**: 2026-06-25
+**Version**: 1.3.0 | **Ratified**: 2026-06-05 | **Last Amended**: 2026-09-11
