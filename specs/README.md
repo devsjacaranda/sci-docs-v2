@@ -37,6 +37,14 @@ Diretório canônico de features Spec Kit.
 | 038 | [migracao-modulos-v1](./038-migracao-modulos-v1/spec.md) |
 | 039 | [modulo-diretor](./039-modulo-diretor/spec.md) — **ativa** |
 | 040 | [dossie-detalhe-ui](./040-dossie-detalhe-ui/spec.md) — **norma de UI** (dossiê de detalhe; piloto Ouvidoria) |
+| 041 | [migracao-historico-ouvidoria](./041-migracao-historico-ouvidoria/spec.md) |
+| 042 | [relatorio-gestao-ouvidoria](./042-relatorio-gestao-ouvidoria/spec.md) |
+| 043 | [ouvidoria-publica-ageman](./043-ouvidoria-publica-ageman/spec.md) |
+| 044 | [emissor-criador-ageman](./044-emissor-criador-ageman/spec.md) |
+| 045 | [rascunho-manifestacao-ouvidoria](./045-rascunho-manifestacao-ouvidoria/spec.md) |
+| 046 | [timbrado-ageman-2026](./046-timbrado-ageman-2026/spec.md) — **Draft** (folha padrão oficial) |
+| 047 | [acesso-ouvidoria-ageman](./047-acesso-ouvidoria-ageman/spec.md) |
+| 048 | [identificacao-sem-anonimo](./048-identificacao-sem-anonimo/spec.md) — **Draft** (remove opção anônimo + e-mail único em Identificação, assistente interno) |
 
 ## Arquivadas
 
