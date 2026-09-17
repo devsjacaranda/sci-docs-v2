@@ -291,6 +291,8 @@ O campo `ultimaAtualizacao` é sempre nulo no v1 (a base não tem timestamp); ma
 
 **Rationale**: FR-077 e SC-010 proíbem dado de negócio dependente do navegador. O fallback do v1 é acionado por falha do GET, falha do toggle, ou 503 de schema ausente, e grava sob a chave `diagnostico-marcadores:{userId}` avisando que ficou "só neste navegador" — ou seja, degrada em perda de dado. No v2 a indisponibilidade é erro explícito com nova tentativa (FR-078), nunca persistência local.
 
+**Addendum (2026-09-14 — feature 045)**: a proibição acima permanece a regra geral. A feature [045-rascunho-manifestacao-ouvidoria](../045-rascunho-manifestacao-ouvidoria/plan.md) introduz uma exceção estreita e documentada — ao contrário do fallback silencioso do v1 (que mascarava indisponibilidade como sucesso), o rascunho local da 045 é: (a) um recurso de primeira classe, visível na UI (convite explícito, não um aviso escondido); (b) sempre revalidado no servidor antes de qualquer retomada (nunca confiado ciegamente); (c) escopado a um único registro por operador+tenant com expiração automática de 24h; (d) testado e com allowlist explícito no guardrail `no-business-storage.test.ts`. Ver `research.md` da 045 (decisão "SC-010 exception") para o detalhamento completo.
+
 ---
 
 ## R16 — PDF timbrado: PDFKit no servidor, decomposto
