@@ -81,8 +81,8 @@ Como responsável técnico, quero comparar os totais migrados (satisfação por 
 
 ### Functional Requirements
 
-- **FR-001**: A migração MUST importar os agregados mensais de pesquisa de satisfação (ano, mês, pergunta/indicador, valor médio) exclusivamente para o período 01/2018–12/2023, a partir da planilha "PLANILHAS OUVIDORIA AGEMAN - 2026 - 06 e Consolidado.xlsx".
-- **FR-002**: A migração MUST NOT importar respostas individuais de pesquisa de satisfação — apenas os valores já agregados por mês/pergunta, pois é o único nível de detalhe disponível na origem.
+- **FR-001**: A migração MUST importar os agregados mensais de pesquisa de satisfação (ano, mês, pergunta/indicador) exclusivamente para o período 01/2018–12/2023, a partir da planilha "PLANILHAS OUVIDORIA AGEMAN - 2026 - 06 e Consolidado.xlsx", persistindo no modelo de contagens Sim/Não (`consultados?`, `respostasSim`, `respostasNao`) introduzido pela spec [049-ajustes-relatorio-gestao-ouvidoria](../049-ajustes-relatorio-gestao-ouvidoria/spec.md) — **não** mais no campo único "valor" (0–10) da spec 042 original, que foi removido do schema. Como a planilha histórica só traz o percentual/valor médio já agregado por mês (sem as contagens brutas de Sim/Não), a estratégia exata de reconciliação (ex.: manter só o percentual e marcar `consultados`/`respostasSim`/`respostasNao` como indisponíveis vs. estimar contagens a partir do percentual) MUST ser definida no `/speckit-plan` desta spec 041, e não está decidida neste documento.
+- **FR-002**: A migração MUST NOT importar respostas individuais de pesquisa de satisfação — apenas os valores já agregados por mês/pergunta, pois é o único nível de detalhe disponível na origem. Isso é ortogonal à mudança de FR-001: o dado de origem continua agregado; o que muda é apenas o formato de destino no banco (contagens Sim/Não em vez de um valor médio único).
 - **FR-003**: A migração MUST vincular cada linha histórica de orientação/encaminhamento (01/2018–12/2023) a uma `Manifestacao` existente somente quando houver correspondência exata e não-ambígua (ex. combinação de data + protocolo/identificador).
 - **FR-004**: A migração MUST NOT criar registros de orientação/encaminhamento como entidades independentes sem vínculo a uma manifestação — linhas sem correspondência exata são descartadas da persistência (não migradas).
 - **FR-005**: A migração MUST gerar um relatório de exceções contendo toda linha de origem (satisfação ou orientação) que não foi migrada, com o motivo específico (ex. "sem manifestação correspondente", "correspondência ambígua", "erro de fórmula na origem", "fora do período 2018–2023").
@@ -94,7 +94,7 @@ Como responsável técnico, quero comparar os totais migrados (satisfação por 
 
 ### Key Entities *(include if feature involves data)*
 
-- **Agregado Mensal de Pesquisa de Satisfação**: representa o resultado consolidado de um mês/pergunta da pesquisa de satisfação (tenant, ano, mês, indicador/pergunta, valor médio ou percentual). Não representa respostas individuais.
+- **Agregado Mensal de Pesquisa de Satisfação**: representa o resultado consolidado de um mês/pergunta da pesquisa de satisfação (tenant, ano, mês, indicador/pergunta). Desde a spec 049, o campo de destino é o modelo de contagens `consultados?`/`respostasSim`/`respostasNao` (percentual derivado em leitura, não persistido) — não mais um "valor médio ou percentual" único. Não representa respostas individuais.
 - **Vínculo Histórico de Orientação/Encaminhamento**: representa o enriquecimento de uma `Manifestacao` já existente com o dado histórico de orientação/encaminhamento presente na planilha (concessionária, data do encaminhamento, situação). Não é uma entidade autônoma — só existe associada a uma manifestação.
 - **Relatório de Exceções de Migração**: lista de itens de origem que não foram migrados, com motivo. É um artefato de auditoria da execução, não um dado de produto consumido pelos usuários finais da Ouvidoria.
 
@@ -110,6 +110,7 @@ Como responsável técnico, quero comparar os totais migrados (satisfação por 
 
 ## Assumptions
 
+- **[2026-09-21]** A spec [049-ajustes-relatorio-gestao-ouvidoria](../049-ajustes-relatorio-gestao-ouvidoria/spec.md) alterou o schema de destino da pesquisa de satisfação: o campo único `valor` (0–10) foi removido e substituído por `consultados?`/`respostasSim`/`respostasNao` (percentual `Sim ÷ (Sim+Não)` derivado em leitura). Como esta spec 041 ainda está em Draft e nenhum dado histórico real foi migrado até esta data, não há retrabalho — apenas a modelagem de destino descrita em FR-001/Key Entities acima precisa ser seguida quando a implementação desta migração for planejada.
 - A migração de manifestações, endereços (zona/bairro) e demais dados operacionais desde 2018 já foi realizada em iniciativa anterior (migração AGEMAN v1→v2); esta spec **não** remigra esse dado, apenas complementa com satisfação e orientações vinculadas.
 - "Participação em Eventos" está definitivamente fora de escopo — decisão de produto, não é migrada nem implementada em nenhuma spec relacionada a este relatório de gestão.
 - O período de 2024 em diante será tratado por lançamento manual no módulo de implementação do relatório de gestão (spec separada), não por esta migração — isso evita conflito com dados que já estão sendo operados ativamente no sistema.
