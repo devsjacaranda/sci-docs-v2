@@ -43,13 +43,18 @@ Localização: `.cursor/skills/<nome>/SKILL.md` (espelhadas em `.agents/skills/`
 | Skill | Quando usar |
 |-------|-------------|
 | `ci-api-arquitetura` | Estrutura de pastas, pipeline de request, clean code, patterns |
-| `nestjs-best-practices` | NestJS geral — módulos, DI, guards, performance, error handling |
+| `nestjs-best-practices` | NestJS geral — módulos, DI, guards, performance, error handling (fonte: `kadajett/agent-nestjs-skills`, 40 regras/10 categorias) |
+| `fastify-best-practices` | Fastify puro sob o Nest — rotas, plugins, hooks, JSON Schema, Pino, CORS, ciclo de vida da request (fonte: `mcollina/skills`) |
 | `nestjs-module-scaffold` | Criar ou estender módulo (`*.schemas.ts`, controller, service, specs) |
 | `prisma-schema-workflow` | Schema, migrations, seed, extensions tenant/soft-delete |
+| `prisma-postgres` | Provisionar/gerenciar Postgres via Prisma Console, `create-db`, Management API (fonte: `prisma/skills`) |
+| `neon-postgres` | *(opcional)* Neon/Lakebase Postgres — branching, scale-to-zero, pooling, se o ambiente usar Neon (fonte: `neondatabase/agent-skills`) |
 | `auth-patterns` | JWT, guards, roles, tenant, `X-Tenant-ID`, `AdminPlataforma` |
 | `licenca-contracts` | `@RequireLicenca`, LicencaGuard, slugs Carvalho/Pau-Brasil/Jatobá/Cedro |
 | `js-ts-data-transforms` | Shaping Prisma→DTO, agregações em service — **complementa** scaffold |
 | `js-ts-performance-readability` | Seeds, scripts, utils puros — **complementa** nestjs/prisma |
+| `typescript-mastery` | Generics, conditional/mapped/template-literal types, `satisfies`, DTOs Zod — ver §5.1 |
+| `reset-senha` | Resetar senha de `User`/`AdminTenant`/`AdminPlataforma` — senha forte gerada + `mustChangePassword`, via API ou `scripts/reset-account-password.ts` |
 
 **Docs de produto (não são skills):** `.cursor/docs/licencas-canonicas.md`, `regras-plataforma.md`  
 **Vocabulário API:** `ci-api-v2/CONTEXT.md`
@@ -60,12 +65,16 @@ Localização: `.cursor/skills/<nome>/SKILL.md` (espelhadas em `.agents/skills/`
 |----------|-----------------|
 | Novo endpoint | `testing-conventions` + `nestjs-module-scaffold` |
 | Schema/migration | `prisma-schema-workflow` |
+| Provisionar banco Prisma Postgres | `prisma-postgres` |
 | Auth/guards/tenant | `auth-patterns` |
 | Licença na rota | `licenca-contracts` |
 | Pastas/arquitetura | `ci-api-arquitetura` |
 | Review NestJS geral | `nestjs-best-practices` |
+| Rota/plugin/hook Fastify puro | `fastify-best-practices` |
 | Mapper / agregação service | `js-ts-data-transforms` |
 | Seed / script | `js-ts-performance-readability` |
+| Tipo avançado / generics / DTO Zod | `typescript-mastery` |
+| Resetar senha de conta | `reset-senha` |
 
 ---
 
@@ -74,7 +83,10 @@ Localização: `.cursor/skills/<nome>/SKILL.md` (espelhadas em `.agents/skills/`
 | Skill | Quando usar |
 |-------|-------------|
 | `ui-ux-pro-max` | UI, layout, cores, tipografia, shadcn, Nivo, design system, mockup |
+| `shadcn` | Adicionar/atualizar componentes shadcn/ui via CLI, `components.json`, registries, presets (fonte: `shadcn-ui/ui`) — **complementa** `ui-ux-pro-max` |
 | `vite-react-best-practices` | Vite, build, rotas lazy, performance, deploy SPA, `VITE_*` |
+| `react-vite-best-practices` | Otimização React+Vite — code splitting, lazy loading, HMR, bundle size, 23 regras/6 categorias (fonte: `asyrafhussin/agent-skills`) — **complementa** `vite-react-best-practices` |
+| `typescript-mastery` | Generics, conditional/mapped/template-literal types, `satisfies`, tipos de props/hooks — ver §5.1 |
 | `js-ts-data-transforms` | `*-mappers.ts`, ViewModels, API→UI, fixtures Vitest — **complementa** vite |
 | `js-ts-performance-readability` | Utils puros, parsers, agregações — **complementa** vite |
 
@@ -93,8 +105,11 @@ Localização: `.cursor/skills/<nome>/SKILL.md` (espelhadas em `.agents/skills/`
 | Novo dashboard visual | `ui-ux-pro-max` (+ vite se rotas/estado) |
 | Erro de build Vite | `vite-react-best-practices` |
 | Deploy produção | `vite-react-best-practices` |
+| Componente shadcn novo/atualizar | `shadcn` |
+| Bundle size / code splitting React | `react-vite-best-practices` |
 | Mapper / transform de dados | `js-ts-data-transforms` |
 | Util / parser puro | `js-ts-performance-readability` |
+| Tipo avançado / generics | `typescript-mastery` |
 
 ### Saúde / e-SUS / UBS
 
@@ -114,6 +129,23 @@ Adaptado de [icyJoseph/agent-skills](https://github.com/icyJoseph/agent-skills) 
 |-------|-------------|
 | `js-ts-data-transforms` | Mappers, ViewModels, agregações, pipeline fetch→validate→map, shaping Prisma→DTO |
 | `js-ts-performance-readability` | Seeds, scripts, Map/Set, async paralelo, edge cases em utils |
+| `typescript-mastery` | **"Code master"** — skill unificada (fusão de `wshobson/agents::typescript-advanced-types` + `spillwavesolutions/mastering-typescript-skill::mastering-typescript`). Generics, conditional/mapped/template-literal types, `infer`, type guards, `satisfies`, integração React/NestJS, Zod, toolchain TS 5.9+. Usar em **ambos** os pacotes (API e client) sempre que a lógica de tipos for o foco |
+
+---
+
+## 5.2 Utilidades, QA e arquitetura (via `npx skills add`)
+
+Instaladas com o CLI [skills.sh](https://skills.sh) — rastreadas em `skills-lock.json` (raiz do repo). Uso pontual, fora do fluxo diário de stack.
+
+| Skill | Quando usar | Fonte |
+|-------|-------------|-------|
+| `playwright-e2e` | Testes E2E com Playwright — Page Object Model, fixtures, seletores resilientes (`getByRole`), config multi-browser | `thetestingacademy` via qaskills.sh |
+| `xlsx` | Ler/criar/editar `.xlsx`/`.csv`/`.tsv` — fórmulas, formatação, dados tabulares | `anthropics/skills` |
+| `pdf` | Ler, mesclar, dividir, preencher formulário, OCR, watermark em PDF | `anthropics/skills` |
+| `clean-code` | Refatorar "código que funciona" em "código limpo" (Uncle Bob) — nomes, funções, comentários | `sickn33/agentic-awesome-skills` |
+| `clean-architecture` | Dependency Rule, camadas, ports & adapters, isolar regra de negócio de framework/DB | `wondelai/skills` |
+
+**Prioridade:** qualidade de código pontual → `clean-code`; decisão de camadas/módulos → `clean-architecture` (também cobre `ci-api-arquitetura`, mas este último é a referência canônica do monorepo em caso de conflito).
 
 ---
 
@@ -154,3 +186,4 @@ Não são obrigatórias no fluxo diário — use quando o contexto pedir.
 | `.cursor/rules/skill-routing.mdc` | Frontend (detalhe) |
 | `.cursor/rules/skill-routing-api.mdc` | API (detalhe) |
 | `.cursor/rules/specify-rules.mdc` | Contexto Spec Kit + stack |
+| `skills-lock.json` (raiz) | Proveniência das skills externas instaladas via `npx skills add` — reprodutibilidade (`skills experimental_install`) |
