@@ -45,6 +45,7 @@ Diretório canônico de features Spec Kit.
 | 046 | [timbrado-ageman-2026](./046-timbrado-ageman-2026/spec.md) — **Draft** (folha padrão oficial) |
 | 047 | [acesso-ouvidoria-ageman](./047-acesso-ouvidoria-ageman/spec.md) |
 | 048 | [identificacao-sem-anonimo](./048-identificacao-sem-anonimo/spec.md) — **Draft** (remove opção anônimo + e-mail único em Identificação, assistente interno) |
+| 049 | [ajustes-relatorio-gestao-ouvidoria](./049-ajustes-relatorio-gestao-ouvidoria/spec.md) — **Draft** (satisfação Sim/Não, bug PDF, orientações/encaminhamentos detalhado, participação em eventos) |
 
 ## Arquivadas
 
