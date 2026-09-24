@@ -46,6 +46,10 @@ Diretório canônico de features Spec Kit.
 | 047 | [acesso-ouvidoria-ageman](./047-acesso-ouvidoria-ageman/spec.md) |
 | 048 | [identificacao-sem-anonimo](./048-identificacao-sem-anonimo/spec.md) — **Draft** (remove opção anônimo + e-mail único em Identificação, assistente interno) |
 | 049 | [ajustes-relatorio-gestao-ouvidoria](./049-ajustes-relatorio-gestao-ouvidoria/spec.md) — **Draft** (satisfação Sim/Não, bug PDF, orientações/encaminhamentos detalhado, participação em eventos) |
+| 050 | [relatorio-gestao-desfecho-ageman](./050-relatorio-gestao-desfecho-ageman/spec.md) — **Draft** (gap 1: desfecho RESUMO GERAL — resolvida / meio jurídico / pendente) |
+| 050 | [relatorio-gestao-forma-atendimento-ageman](./050-relatorio-gestao-forma-atendimento-ageman/spec.md) — **Draft** (gap 2: bloco Forma de atendimento — `serviceMode` vs `origem`) |
+| 050 | [relatorio-gestao-tipo-concessao-ageman](./050-relatorio-gestao-tipo-concessao-ageman/spec.md) — **Draft** (gap 3: bloco `porTipoManifestacao` → tipo de concessão; RESUMO GERAL + aba 7) |
+| 050 | [relatorio-gestao-serie-historica-ageman](./050-relatorio-gestao-serie-historica-ageman/spec.md) — **Draft** (gap 4: grade mês×ano 2018–2026, RESUMO GERAL / MENSAL_DEMAND; rota dedicada série histórica) |
 
 ## Arquivadas
 
