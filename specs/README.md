@@ -50,6 +50,8 @@ Diretório canônico de features Spec Kit.
 | 050 | [relatorio-gestao-forma-atendimento-ageman](./050-relatorio-gestao-forma-atendimento-ageman/spec.md) — **Draft** (gap 2: bloco Forma de atendimento — `serviceMode` vs `origem`) |
 | 050 | [relatorio-gestao-tipo-concessao-ageman](./050-relatorio-gestao-tipo-concessao-ageman/spec.md) — **Draft** (gap 3: bloco `porTipoManifestacao` → tipo de concessão; RESUMO GERAL + aba 7) |
 | 050 | [relatorio-gestao-serie-historica-ageman](./050-relatorio-gestao-serie-historica-ageman/spec.md) — **Draft** (gap 4: grade mês×ano 2018–2026, RESUMO GERAL / MENSAL_DEMAND; rota dedicada série histórica) |
+| 051 | [insights-ia-v2](./051-insights-ia-v2/spec.md) — **Draft** (Pulso + fila de cartões em `/ouvidoria/insights`; Qwen 2.5 3B local só para fraseado — **supera o FR-013 da 007**) |
+| 052 | [matriz-concessao-desfecho-ageman](./052-matriz-concessao-desfecho-ageman/spec.md) — **implementada** (matriz Concessão × Desfecho no relatório de gestão; remove "Pendente" do encerramento; renomeia status pré-demanda "Em análise" → "Pendente"; filtro por concessão na lista de demandas) |
 
 ## Arquivadas
 
