@@ -5,7 +5,14 @@ $script:Civ2DocsDir = 'civ2-docs'
 
 function Get-Civ2DocsRoot {
     param([string]$RepoRoot = (Get-RepoRoot))
-    return Join-Path $RepoRoot $script:Civ2DocsDir
+    $nested = Join-Path $RepoRoot $script:Civ2DocsDir
+    if (Test-Path -LiteralPath (Join-Path $nested '.specify') -PathType Container) {
+        return $nested
+    }
+    if (Test-Path -LiteralPath (Join-Path $RepoRoot '.specify') -PathType Container) {
+        return $RepoRoot
+    }
+    return $nested
 }
 
 function Get-SpecifyDir {
