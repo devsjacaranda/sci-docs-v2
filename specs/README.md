@@ -55,8 +55,8 @@ Diretório canônico de features Spec Kit.
 
 ## Arquivadas
 
-Índice completo: [arquivados/README.md](./arquivados/README.md) (001–035).
+Índice completo: [arquivados/README.md](./arquivados/README.md) (001–035, 053).
 
-**Última concluída:** [035 Tramitação Protocolo](./arquivados/035-tramitacao-protocolo/STATUS.md)
+**Última concluída:** [053 Excluir Anexos Ouvidoria](./arquivados/053-excluir-anexos-ouvidoria/STATUS.md)
 
 Infra Spec Kit: `civ2-docs/.specify/` · Skills: [spec-kit/SKILLS.md](../spec-kit/SKILLS.md)

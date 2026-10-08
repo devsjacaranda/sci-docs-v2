@@ -1,9 +1,8 @@
 {
-  "feature_directory": "civ2-docs/specs/052-matriz-concessao-desfecho-ageman",
   "last_completed": {
-    "feature_directory": "specs/arquivados/025-ageman-ouvidoria-ajustes",
-    "completed_at": "2026-10-05",
-    "tasks_done": 22,
-    "tasks_total": 22
+    "feature_directory": "civ2-docs/specs/arquivados/053-excluir-anexos-ouvidoria",
+    "completed_at": "2026-10-08",
+    "tasks_done": 54,
+    "tasks_total": 54
   }
 }
