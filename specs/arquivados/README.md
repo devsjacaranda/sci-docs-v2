@@ -33,5 +33,6 @@ Features **concluídas** e movidas para `civ2-docs/specs/arquivados/` via `/spec
 | 031 | [global-dashboard-demock](./031-global-dashboard-demock/STATUS.md) | 39/39 tasks |
 | 032 | [permission-screen-visibility](./032-permission-screen-visibility/STATUS.md) | 86/86 tasks |
 | 033 | [tramitacao-docs-confidenciais](./033-tramitacao-docs-confidenciais/STATUS.md) | 67/67 tasks |
+| 053 | [excluir-anexos-ouvidoria](./053-excluir-anexos-ouvidoria/STATUS.md) | 54/54 tasks |
 
-**Última arquivada:** [033 Documentos confidenciais na Tramitação](./033-tramitacao-docs-confidenciais/STATUS.md)
+**Última arquivada:** [053 Excluir Anexos Ouvidoria](./053-excluir-anexos-ouvidoria/STATUS.md)
