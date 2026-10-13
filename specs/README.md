@@ -53,6 +53,7 @@ Diretório canônico de features Spec Kit.
 | 051 | [insights-ia-v2](./051-insights-ia-v2/spec.md) — **Draft** (Pulso + fila de cartões em `/ouvidoria/insights`; Qwen 2.5 3B local só para fraseado — **supera o FR-013 da 007**) |
 | 052 | [matriz-concessao-desfecho-ageman](./052-matriz-concessao-desfecho-ageman/spec.md) — **implementada** (matriz Concessão × Desfecho no relatório de gestão; remove "Pendente" do encerramento; renomeia status pré-demanda "Em análise" → "Pendente"; filtro por concessão na lista de demandas) |
 | 054 | [download-massa-manifestacoes](./054-download-massa-manifestacoes/spec.md) — **Draft, plano pronto** (modal "Baixar em massa"; um PDF único com os dossiês e anexos embutidos; ZIP só se houver arquivo que não cabe em PDF; limite 50 / ~300 MB) |
+| 055 | [registros-controle-demandas](./055-registros-controle-demandas/spec.md) — **Draft, plano pronto** (modal "Baixar em massa"; saída "Gerar registros" — planilha `.xlsx` por mês/ano no formato do controle manual, uma aba por concessão) |
 
 ## Arquivadas
 
