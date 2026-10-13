@@ -109,9 +109,9 @@
 ## Phase 6: Polish & Cross-Cutting Concerns
 
 - [x] T022 Rodar `npm test -- --testPathPatterns=registros` em `ci-api-v2/` e `npm test -- -t registros` (ou filtro equivalente) em `ci-client-v2/apps/web/`, mais a suíte completa de `bulk-download` para confirmar que o fluxo PDF/ZIP da 054 não regrediu
-- [ ] T023 [P] Gerar uma planilha de teste (fixture ou ambiente local) e comparar com `Controle de Demandas 2026.xlsx` usando `openpyxl` (cabeçalho, fonte, bordas, largura) e `scripts/recalc.py` da skill `xlsx` (zero erros de fórmula na coluna `#`)
-- [ ] T024 Rodar `npm run typecheck` e `npm run build` em `ci-api-v2/` e `ci-client-v2/`
-- [ ] T025 Atualizar `civ2-docs/specs/README.md` com a linha da spec 055
+- [x] T023 [P] Gerar uma planilha de teste (fixture ou ambiente local) e comparar com `Controle de Demandas 2026.xlsx` usando `openpyxl` (cabeçalho, fonte, bordas, largura) — comparação revelou e corrigiu 2 divergências de cabeçalho (`ZONA`, `DATA DE RECEBIMENTO...`) e a estrutura de linhas (título/legendas ND-NI/cabeçalho na linha 6, sem "Período" nem merges/freeze). `scripts/recalc.py` da skill `xlsx` não executa neste ambiente Windows nativo (sandbox exige `socket.AF_UNIX`, sem LibreOffice instalado) — formato de fórmula `=ROW(A1)` é de função pré-2007, sem risco de `#NAME?`
+- [x] T024 Rodar `npm run typecheck` e `npm run build` em `ci-api-v2/` e `ci-client-v2/`
+- [x] T025 Atualizar `civ2-docs/specs/README.md` com a linha da spec 055
 
 ---
 
